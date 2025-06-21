@@ -14,7 +14,12 @@ module.exports = (api) => {
   if (isTest) {
     targets.node = true;
   } else {
-    targets.browsers = ['last 2 versions', 'ie >= 9'];
+    targets.browsers = [
+      'Chrome >= 86',
+      'Firefox >= 86',
+      'Safari >= 14',
+      'Edge >= 86',
+    ];
   }
 
   const testPlugins = [

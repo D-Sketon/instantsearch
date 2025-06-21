@@ -1,11 +1,11 @@
-import * as connectors from './connectors/index';
-import * as helpers from './helpers/index';
-import { createInfiniteHitsSessionStorageCache } from './lib/infiniteHitsCache/index';
+// import * as connectors from './connectors/index';
+// import * as helpers from './helpers/index';
+// import { createInfiniteHitsSessionStorageCache } from './lib/infiniteHitsCache/index';
 import InstantSearch from './lib/InstantSearch';
-import * as routers from './lib/routers/index';
-import * as stateMappings from './lib/stateMappings/index';
+// import * as routers from './lib/routers/index';
+// import * as stateMappings from './lib/stateMappings/index';
 import version from './lib/version';
-import * as middlewares from './middlewares/index';
+// import * as middlewares from './middlewares/index';
 import * as widgets from './widgets/index';
 
 import type { InstantSearchOptions } from './lib/InstantSearch';
@@ -17,29 +17,29 @@ type InstantSearchModule = {
   ): InstantSearch<Expand<UiState & TUiState>, TRouteState>;
   version: string;
 
-  connectors: typeof connectors;
+  // connectors: typeof connectors;
   widgets: typeof widgets;
-  middlewares: typeof middlewares;
+  // middlewares: typeof middlewares;
 
-  routers: typeof routers;
-  stateMappings: typeof stateMappings;
+  // routers: typeof routers;
+  // stateMappings: typeof stateMappings;
 
-  createInfiniteHitsSessionStorageCache: typeof createInfiniteHitsSessionStorageCache;
+  // createInfiniteHitsSessionStorageCache: typeof createInfiniteHitsSessionStorageCache;
 
   /** @deprecated use html tagged templates and the Highlight component instead */
-  highlight: typeof helpers.highlight;
+  // highlight: typeof helpers.highlight;
   /** @deprecated use html tagged templates and the ReverseHighlight component instead */
-  reverseHighlight: typeof helpers.reverseHighlight;
+  // reverseHighlight: typeof helpers.reverseHighlight;
   /** @deprecated use html tagged templates and the Snippet component instead */
-  snippet: typeof helpers.snippet;
+  // snippet: typeof helpers.snippet;
   /** @deprecated use html tagged templates and the ReverseSnippet component instead */
-  reverseSnippet: typeof helpers.reverseSnippet;
+  // reverseSnippet: typeof helpers.reverseSnippet;
 
   /**
    * @deprecated use createInsightsMiddleware
    * @link https://www.algolia.com/doc/api-reference/widgets/insights/js/
    */
-  insights: typeof helpers.insights;
+  // insights: typeof helpers.insights;
 };
 
 /**
@@ -62,19 +62,19 @@ const instantsearch: InstantSearchModule = (options) =>
 
 instantsearch.version = version;
 
-instantsearch.connectors = connectors;
+// instantsearch.connectors = connectors;
 instantsearch.widgets = widgets;
-instantsearch.middlewares = middlewares;
+// instantsearch.middlewares = middlewares;
 
-instantsearch.routers = routers;
-instantsearch.stateMappings = stateMappings;
+// instantsearch.routers = routers;
+// instantsearch.stateMappings = stateMappings;
 
-instantsearch.createInfiniteHitsSessionStorageCache =
-  createInfiniteHitsSessionStorageCache;
-instantsearch.highlight = helpers.highlight;
-instantsearch.reverseHighlight = helpers.reverseHighlight;
-instantsearch.snippet = helpers.snippet;
-instantsearch.reverseSnippet = helpers.reverseSnippet;
-instantsearch.insights = helpers.insights;
+// instantsearch.createInfiniteHitsSessionStorageCache =
+//   createInfiniteHitsSessionStorageCache;
+// instantsearch.highlight = helpers.highlight;
+// instantsearch.reverseHighlight = helpers.reverseHighlight;
+// instantsearch.snippet = helpers.snippet;
+// instantsearch.reverseSnippet = helpers.reverseSnippet;
+// instantsearch.insights = helpers.insights;
 
 export default instantsearch;

@@ -1,6 +1,6 @@
 {
-  "name": "instantsearch.js",
-  "version": "4.57.0",
+  "name": "@reimujs/instantsearch.js",
+  "version": "4.57.0-beta.1",
   "description": "InstantSearch.js is a JavaScript library for building performant and instant search experiences with Algolia.",
   "homepage": "https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/",
   "types": "es/index.d.ts",
@@ -45,9 +45,9 @@
   },
   "scripts": {
     "build": "yarn run build:cjs && yarn run build:es && yarn run build:umd && yarn run build:types",
-    "build:umd": "rm -rf dist && BABEL_ENV=umd rollup --config ./scripts/rollup/rollup.config.js",
-    "build:cjs": "rm -rf cjs && BABEL_ENV=cjs babel --root-mode upward src --extensions '.js,.ts,.tsx' --out-dir cjs/ --ignore 'src/index.es.ts','**/__tests__','**/__mocks__' --quiet",
-    "build:es": "rm -rf es && BABEL_ENV=es babel --root-mode upward src --extensions '.js,.ts,.tsx' --out-dir es/ --ignore 'src/index.es.ts','**/__tests__','**/__mocks__' --quiet && BABEL_ENV=es babel --root-mode upward src/index.es.ts --out-file es/index.js --quiet && echo '{\"type\":\"module\",\"sideEffects\":false}' > es/package.json",
+    "build:umd": "rimraf dist && set BABEL_ENV=umd && rollup --config ./scripts/rollup/rollup.config.js",
+    "build:cjs": "rimraf cjs && set BABEL_ENV=cjs && babel --root-mode upward src --extensions '.js,.ts,.tsx' --out-dir cjs/ --ignore 'src/index.es.ts','**/__tests__','**/__mocks__' --quiet",
+    "build:es": "rimraf es && set BABEL_ENV=es && babel --root-mode upward src --extensions '.js,.ts,.tsx' --out-dir es/ --ignore 'src/index.es.ts','**/__tests__','**/__mocks__' --quiet && set BABEL_ENV=es && babel --root-mode upward src/index.es.ts --out-file es/index.js --quiet && echo '{\"type\":\"module\",\"sideEffects\":false}' > es/package.json",
     "build:types": "scripts/typescript/extract.js",
     "storybook": "start-storybook --quiet --port 6006 --ci --static-dir .storybook/static",
     "storybook:build": "build-storybook --quiet --output-dir ../../website/stories/js --static-dir .storybook/static",
